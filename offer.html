@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Offers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+          <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link"  href="index.html"><i class="fa-solid fa-house-user"></i>Home</a>
+              </li>
+              </ul>
+           </div>
+           <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link"  href="catalog.html"><i class="fa-solid fa-shirt"></i>Products</a>
+              </li>
+              </ul>
+           </div>
+          <div class="collapse navbar-collapse">
+            <form class="form-inline ml-auto">
+              <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search">
+              <button class="btn btn- my-2 my-sm-0" type="button"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+            <button class="btn btn- my-2 my-sm-0" type="button" id="view-cart"><i class="fa-solid fa-cart-shopping"></i>Cart (<span id="cart-count">0</span>)</button>
+          </div>
+        </nav>
+        
+      </header>
+      <h1>Exclusive TShirt Store Discounts</h1>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3">
+        <h5>Filters</h5>
+        <form id="filters">
+          <div class="form-group">
+            <label for="filter-gender">Gender</label>
+            <select class="form-control" id="filter-gender">
+              <option value="all">All</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="unisex">Unisex</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-color">Color</label>
+            <select class="form-control" id="filter-color">
+              <option value="all">All</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+            
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-type">Type</label>
+            <select class="form-control" id="filter-type">
+              <option value="all">All</option>
+              <option value="polo">Polo</option>
+              <option value="vneck">V-neck</option>
+              <option value="crewneck">Crewneck</option>
+              
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="filter-price-min">Min Price</label>
+            <input type="number" class="form-control" id="filter-price-min" placeholder="0">
+          </div>
+          <div class="form-group">
+            <label for="filter-price-max">Max Price</label>
+            <input type="number" class="form-control" id="filter-price-max" placeholder="100">
+          </div>
+          <button type="button" class="btn btn-primary" id="apply-filters">Apply Filters</button>
+        </form>
+      </div>
+      <div class="col-md-9">
+        <div class="row" id="offer-list">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Shopping Cart</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <ul id="cart-items"></ul>
+          <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="checkout">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="offer-template">
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img class="card-img-top" src="" alt="Offer Image">
+        <div class="card-body">
+          <h5 class="card-title offer-name"></h5>
+          <p class="card-text offer-price"></p>
+          <p class="card-text offer-attributes"></p>
+          <button class="btn btn-primary add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </template>
+  <footer>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a passionate team dedicated to bringing you the best t-shirts.</p>
+      </section>
+    
+      <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@tshirtstore.com</p>
+      </section>
+    
+    <p>&copy; 2024 T-Shirt Store. All rights reserved.</p>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="offer.js"></script>
+</body>
+</html>
